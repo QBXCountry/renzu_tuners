@@ -3,8 +3,8 @@ config = {}
 -- debug mode -- saves all vehicle including non owned vehicles
 config.debug = true -- enable commands for dev. /sethandling 100 (0-100), /setfuel 100 (0-100), /setmileage 1000 (0,10000) !! note this does not have permission checks
 config.sandboxmode = false -- different tuning and no degrations and other stuff. mostly used only when trying to tweak a vehicle handling meta in dyno.
-config.freeupgrade = true -- for upgrades. set to true best for standalone purpose or testing purpose, for roleplay use the crafting/jobmanage money. if false menu will requires you a specific item for each upgrades
-config.metadata = false -- use item metadata when crafting items if ox_inventory. if your inventory does not support it, set this to false.
+config.freeupgrade = false -- for upgrades. set to true best for standalone purpose or testing purpose, for roleplay use the crafting/jobmanage money. if false menu will requires you a specific item for each upgrades
+config.metadata = true -- use item metadata when crafting items if ox_inventory. if your inventory does not support it, set this to false.
 
 config.job = { -- set to false (config.job = false) if you want all feature are accesible by any player, or true, required job to use repairs and upgrade menu, dyno -- job access for menu upgrade and points. ex. mechanic, tuner?
 	['mechanic'] = 1, -- @jobname -- @grade_level
@@ -13,7 +13,7 @@ config.job = { -- set to false (config.job = false) if you want all feature are 
 
 config.usetarget = true -- if false, please configure the points config -- supports ox_target,qtarget,qb-target only
 config.enablepackage = true -- easy install all upgrade variants. ex. Full Upgrade all Racing Parts. this will install all in one package for each variants. each upgrades requires item if itemrequired is true
-config.upgradepackageAnimation = false -- do animation for each upgrades in package
+config.upgradepackageAnimation = true -- do animation for each upgrades in package
 
 config.upgradevariation = { -- enable/disable upgrade variation.
 	['elite'] = true,
@@ -23,8 +23,8 @@ config.upgradevariation = { -- enable/disable upgrade variation.
 }
 
 config.enablecrafting = true -- crafting for items and parts,turbo, engine etc..
-config.purchasableUpgrade = false -- dont like crafting / item based? set this to true to use money to all item upgrades
-config.jobmanagemoney = false -- use job money if purchasableUpgrade. ex. esx_society, qb-management
+config.purchasableUpgrade = true -- dont like crafting / item based? set this to true to use money to all item upgrades
+config.jobmanagemoney = true -- use job money if purchasableUpgrade. ex. esx_society, qb-management
 
 config.nosaveplate = { -- dont save this plate pattern unless debuging
 	['CFX'] = true,
@@ -184,7 +184,7 @@ config.engineupgrades = {
 	{category = 'ultimate', state = 'engine_oil', item = 'ultimate_oil', label = 'Ultimate Oil', handling = {'fInitialDriveMaxFlatVel'}, add = 1.07, affects = 'Top Speed', cost = 550001},
 	{category = 'ultimate', state = 'engine_sparkplug', item = 'ultimate_sparkplug', label = 'Ultimate Spark Plug', stat = {ignition = 3.2}, handling = {'fDriveInertia'}, add = 1.07, affects = 'Torque', cost = 550001},
 	{category = 'ultimate', state = 'engine_gasket', item = 'ultimate_gasket', label = 'Ultimate Head Gasket', handling = {'fDriveInertia'}, add = 1.07, affects = 'Torque', cost = 550001},
-	 {category = 'ultimate', state = 'engine_airfilter', item = 'ultimate_airfilter', label = 'Ultimate Air Filter', handling = {'fInitialDriveForce'}, add =1.07, affects = 'Horsepower', cost = 550001},
+	{category = 'ultimate', state = 'engine_airfilter', item = 'ultimate_airfilter', label = 'Ultimate Air Filter', handling = {'fInitialDriveForce'}, add =1.07, affects = 'Horsepower', cost = 550001},
 	{category = 'ultimate', state = 'engine_fuelinjector', item = 'ultimate_fuelinjector', label = 'Ultimate Fuel Injectors', stat = {fuelpressure = 43.2}, handling = {'fInitialDriveForce'}, add = 1.07, affects = 'Horsepower', cost = 550001},
 	{category = 'ultimate', state = 'engine_pistons', item = 'ultimate_pistons', label = 'Ultimate Pistons' , stat = {compression = 16.0, fuelpressure = -16.0, ignition = 8.0}, handling = {'fInitialDriveMaxFlatVel'}, add = 1.09, affects = 'Top Speed', mod = {index = 11, add = 1}, cost = 550001},
 	{category = 'ultimate', state = 'engine_connectingrods', item = 'ultimate_connectingrods', label = 'Ultimate Connecting Rods' , handling = {'fInitialDriveForce'}, add = 1.07, affects = 'Top Speed', cost = 550001},
@@ -201,7 +201,7 @@ config.engineupgrades = {
 	{category = 'racing', state = 'engine_oil', item = 'racing_oil', label = 'Racing Oil', handling = {'fInitialDriveMaxFlatVel'}, add = 1.045, affects = 'Top Speed', cost = 370001},
 	{category = 'racing', state = 'engine_sparkplug', item = 'racing_sparkplug', label = 'Racing Spark Plug', stat = {ignition = 1.6}, handling = {'fDriveInertia'}, add = 1.05, affects = 'Torque', cost = 370001},
 	{category = 'racing', state = 'engine_gasket', item = 'racing_gasket', label = 'Racing Head Gasket', handling = {'fDriveInertia'}, add = 1.05, affects = 'Torque', cost = 370001},
-	 {category = 'racing', state = 'engine_airfilter', item = 'racing_airfilter', label = 'Racing Air Filter', handling = {'fInitialDriveForce'}, add = 1.03, affects = 'Horsepower', cost = 370001},
+	{category = 'racing', state = 'engine_airfilter', item = 'racing_airfilter', label = 'Racing Air Filter', handling = {'fInitialDriveForce'}, add = 1.03, affects = 'Horsepower', cost = 370001},
 	{category = 'racing', state = 'engine_fuelinjector', item = 'racing_fuelinjector', label = 'Racing Fuel Injectors', stat = {fuelpressure = 21.6}, handling = {'fInitialDriveForce'}, add = 1.04, affects = 'Horsepower', cost = 370001},
 	{category = 'racing', state = 'engine_pistons', item = 'racing_pistons', label = 'Racing Pistons', stat = {compression = 8.0, fuelpressure = -8.0, ignition = 4.0}, handling = {'fInitialDriveMaxFlatVel'}, add = 1.07, affects = 'Top Speed', mod = {index = 11, add = 1}, cost = 370001},
 	{category = 'racing', state = 'engine_connectingrods', item = 'racing_connectingrods', label = 'Racing Connecting Rods' , handling = {'fInitialDriveForce'}, add = 1.05, affects = 'Top Speed', cost = 370001},
@@ -218,7 +218,7 @@ config.engineupgrades = {
 	{category = 'pro', state = 'engine_oil', item = 'pro_oil', label = 'Pro Oil', handling = {'fInitialDriveMaxFlatVel'}, add = 1.025, affects = 'Top Speed', cost = 320000},
 	{category = 'pro', state = 'engine_sparkplug', item = 'pro_sparkplug', label = 'Pro Spark Plug',stat = {ignition = 0.8}, handling = {'fDriveInertia'}, add = 1.035, affects = 'Torque', cost = 320000},
 	{category = 'pro', state = 'engine_gasket', item = 'pro_gasket', label = 'Pro Head Gasket', handling = {'fDriveInertia'}, add = 1.04, affects = 'Torque', cost = 320000},
-	 {category = 'pro', state = 'engine_airfilter', item = 'pro_airfilter', label = 'Pro Air Filter', handling = {'fInitialDriveForce'}, add =1.02, affects = 'Horsepower', cost = 320000},
+	{category = 'pro', state = 'engine_airfilter', item = 'pro_airfilter', label = 'Pro Air Filter', handling = {'fInitialDriveForce'}, add =1.02, affects = 'Horsepower', cost = 320000},
 	{category = 'pro', state = 'engine_fuelinjector', item = 'pro_fuelinjector', label = 'Pro Fuel Injectors',stat = {fuelpressure = 12.0},  handling = {'fInitialDriveForce'}, add = 1.025, affects = 'Horsepower', cost = 320000},
 	{category = 'pro', state = 'engine_pistons', item = 'pro_pistons', label = 'Pro Pistons' , stat = {compression = 4.0, fuelpressure = -4.0, ignition = 2.0}, handling = {'fInitialDriveMaxFlatVel'}, add = 1.04, affects = 'Top Speed', mod = {index = 11, add = 1}, cost = 320000},
 	{category = 'pro', state = 'engine_connectingrods', item = 'pro_connectingrods', label = 'Pro Connecting Rods' , handling = {'fInitialDriveForce'}, add = 1.03, affects = 'Top Speed', cost = 320000},
@@ -235,7 +235,7 @@ config.engineupgrades = {
 	{category = 'elite', state = 'engine_oil', item = 'elite_oil', label = 'Elite Oil', handling = {'fInitialDriveMaxFlatVel'}, add = 1.015, affects = 'Top Speed', cost = 125000},
 	{category = 'elite', state = 'engine_sparkplug', item = 'elite_sparkplug', label = 'Elite Spark Plug',stat = {ignition = 0.4}, handling = {'fDriveInertia'}, add = 1.02, affects = 'Torque', cost = 125000},
 	{category = 'elite', state = 'engine_gasket', item = 'elite_gasket', label = 'Elite Head Gasket', handling = {'fDriveInertia'}, add = 1.03, affects = 'Torque', cost = 125000},
-	 {category = 'elite', state = 'engine_airfilter', item = 'elite_airfilter', label = 'Elite Air Filter', handling = {'fInitialDriveForce'}, add = 1.01, affects = 'Horsepower', cost = 125000},
+	{category = 'elite', state = 'engine_airfilter', item = 'elite_airfilter', label = 'Elite Air Filter', handling = {'fInitialDriveForce'}, add = 1.01, affects = 'Horsepower', cost = 125000},
 	{category = 'elite', state = 'engine_fuelinjector', item = 'elite_fuelinjector', label = 'Elite Fuel Injectors', stat = {fuelpressure = 5.2}, handling = {'fInitialDriveForce'}, add = 1.015, affects = 'Horsepower', cost = 125000},
 	{category = 'elite', state = 'engine_pistons', item = 'elite_pistons', label = 'Elite Pistons' ,stat = {compression = 2.0, fuelpressure = -2.0, ignition = 1.0}, handling = {'fInitialDriveMaxFlatVel'}, add = 1.03, affects = 'Top Speed', mod = {index = 11, add = 1}, cost = 125000},
 	{category = 'elite', state = 'engine_connectingrods', item = 'elite_connectingrods', label = 'Elite Connecting Rods' , handling = {'fInitialDriveForce'}, add = 1.015, affects = 'Top Speed', cost = 125000},
@@ -578,16 +578,16 @@ config.developertune = {
 	[1] = { 
 		label = 'Physical Attributes',
 		icon = 'wrench',
-		description = 'These seven values represent the vehicle physical proportions within the game:',
+		description = 'Questi sette valori rappresentano le proporzioni fisiche del veicolo all\'interno del gioco:',
 		type = 'PhysicalAttributes',
 		handlingname = 'CHandlingData',
 		attributes = {
-			{ type = "input", label = "fMass",  default = 1.0, description = 'This is the weight of the vehicle in kilograms'},
-			{ type = "input", label = "fInitialDragCoeff", default = 1.0, description = ' Increase to simulate aerodynamic drag.'},
-			{ type = "input", label = "fDownForceModifier", default = 1.0, description = ' Increase this value to increase the grip at high speed.'},
-			{ type = "input", label = "fPopUpLightRotation", default = 1.0, description = 'Overrides the behavior of light_cover bone to allow it to rotate up to the specified angle.'},
-			{ type = "input", label = "fPercentSubmerged", default = 1.0, description = 'A percentage of vehicle height in the water before vehicle "floats". '},
-			{ type = "textarea", label = "vecCentreOfMassOffset", default = 1.0, description = 'This value shifts the center of gravity in meters from side to side '},
+			{ type = "input", label = "fMass",  default = 1.0, description = 'Questo è il peso del veicolo in chilogrammi'},
+			{ type = "input", label = "fInitialDragCoeff", default = 1.0, description = ' Aumentare per simulare la resistenza aerodinamica.'},
+			{ type = "input", label = "fDownForceModifier", default = 1.0, description = ' Aumentare questo valore per aumentare il grip alle alte velocità.'},
+			{ type = "input", label = "fPopUpLightRotation", default = 1.0, description = 'Sostituisce il comportamento di light_cover bone per consentirgli di ruotare fino all\'angolo specificato.'},
+			{ type = "input", label = "fPercentSubmerged", default = 1.0, description = 'Una percentuale dell\'altezza del veicolo nell\'acqua prima che il veicolo "galleggi". '},
+			{ type = "textarea", label = "vecCentreOfMassOffset", default = 1.0, description = 'Questo valore sposta il baricentro in metri da un lato all\'altro '},
 			{ type = "textarea", label = "vecInertiaMultiplier", default = 1.0, description = ''},
 
 		}
@@ -595,53 +595,53 @@ config.developertune = {
 	[2] = { 
 		label = 'Transmission Attributes',
 		icon = 'wrench',
-		description = 'These values describe the vehicle straight line performance.',
+		description = 'Questi valori descrivono le prestazioni del veicolo in linea retta.',
 		type = 'Transmission',
 		handlingname = 'CHandlingData',
 		attributes = {
-			{ type = "input", label = "fDriveBiasFront",  default = 1.0, description = 'This value is used to determine whether a vehicle is front, rear, or four wheel drive.'},
-			{ type = "number", label = "nInitialDriveGears", default = 1.0, description = 'How many forward speeds a transmission contains.'},
-			{ type = "input", label = "fInitialDriveForce", default = 1.0, description = 'This value specifies the drive force of the car, at the wheels.'},
-			{ type = "input", label = "fDriveInertia", default = 1.0, description = 'Describes how fast an engine will rev.'},
-			{ type = "input", label = "fClutchChangeRateScaleUpShift", default = 1.0, description = 'Clutch speed multiplier on up shifts, bigger number = faster shifts.'},
-			{ type = "input", label = "fClutchChangeRateScaleDownShift", default = 1.0, description = 'Clutch speed multiplier on down shifts, bigger number = faster shifts.'},
-			{ type = "input", label = "fInitialDriveMaxFlatVel", default = 1.0, description = 'Determines the speed at redline in top gear; Controls the final drive of the vehicles gearbox.'},
-			{ type = "input", label = "fBrakeForce", default = 1.0, description = 'Multiplies the games calculation of deceleration. Bigger number = harder braking'},
-			{ type = "input", label = "fBrakeBiasFront", default = 1.0, description = 'This controls the distribution of braking force between the front and rear axles.'},
-			{ type = "input", label = "fHandBrakeForce", default = 1.0, description = 'Braking power for handbrake. Bigger number = harder braking'},
-			{ type = "input", label = "fSteeringLock", default = 1.0, description = 'This value is a multiplier of the games calculation of the angle a steer wheel will turn while at full turn.'},
+			{ type = "input", label = "fDriveBiasFront",  default = 1.0, description = 'Questo valore viene utilizzato per determinare se un veicolo è a trazione anteriore, posteriore o integrale.'},
+			{ type = "number", label = "nInitialDriveGears", default = 1.0, description = 'Quante marce avanti contiene una trasmissione.'},
+			{ type = "input", label = "fInitialDriveForce", default = 1.0, description = 'Questo valore specifica la forza motrice dell\'auto, alle ruote.'},
+			{ type = "input", label = "fDriveInertia", default = 1.0, description = 'Descrive la velocità con cui un motore gira.'},
+			{ type = "input", label = "fClutchChangeRateScaleUpShift", default = 1.0, description = 'Moltiplicatore di velocità della frizione nei cambi di marcia superiori, numero più grande = cambi più rapidi.'},
+			{ type = "input", label = "fClutchChangeRateScaleDownShift", default = 1.0, description = 'Moltiplicatore di velocità della frizione nelle scalate, numero più grande = cambiate più veloci.'},
+			{ type = "input", label = "fInitialDriveMaxFlatVel", default = 1.0, description = 'Determina la velocità alla linea rossa nella marcia più alta; Controlla la trasmissione finale del cambio del veicolo.'},
+			{ type = "input", label = "fBrakeForce", default = 1.0, description = 'Moltiplica il calcolo della decelerazione del gioco. Numero più grande = frenata più dura'},
+			{ type = "input", label = "fBrakeBiasFront", default = 1.0, description = 'Controlla la distribuzione della forza frenante tra gli assi anteriore e posteriore.'},
+			{ type = "input", label = "fHandBrakeForce", default = 1.0, description = 'Potenza frenante per freno a mano. Numero più grande = frenata più dura'},
+			{ type = "input", label = "fSteeringLock", default = 1.0, description = 'Questo valore è un moltiplicatore del calcolo del gioco dell\'angolo di rotazione del volante a piena velocità.'},
 		}
 	},
 	[3] = { 
 		label = 'Wheel Traction Attributes',
 		icon = 'wrench',
-		description = 'The following attributes describe how the vehicle will behave dynamically, from negotiating corners to acceleration and deceleration',
+		description = 'I seguenti attributi descrivono il comportamento dinamico del veicolo, dalla gestione delle curve all\'accelerazione e alla decelerazione',
 		type = 'Transmission',
 		handlingname = 'CHandlingData',
 		attributes = {
-			{ type = "input", label = "fTractionCurveMax",  default = 1.0, description = 'Cornering grip of the vehicle as a multiplier of the tire surface friction.'},
-			{ type = "input", label = "fTractionCurveMin", default = 1.0, description = 'Accelerating/braking grip of the vehicle as a multiplier of the tire surface friction. '},
-			{ type = "input", label = "fTractionCurveLateral", default = 1.0, description = 'Shape of lateral traction curve (peak traction position in degrees). Lower values make the vehicles grip more responsive but less forgiving to loss of traction.'},
+			{ type = "input", label = "fTractionCurveMax",  default = 1.0, description = 'Aderenza in curva del veicolo come moltiplicatore dell\'attrito della superficie del pneumatico.'},
+			{ type = "input", label = "fTractionCurveMin", default = 1.0, description = 'Aderenza in accelerazione/frenata del veicolo come moltiplicatore dell\'attrito della superficie del pneumatico. '},
+			{ type = "input", label = "fTractionCurveLateral", default = 1.0, description = 'Forma della curva di trazione laterale (posizione di picco della trazione in gradi). Valori più bassi rendono l\'aderenza del veicolo più reattiva ma meno indulgente alla perdita di trazione.'},
 			{ type = "input", label = "fTractionSpringDeltaMax", default = 1.0, description = 'Max distance of the lateral sidewall travel. Unit: meter. A force will pull the vehicle in the opposite direction of the lateral travel'},
-			{ type = "input", label = "fLowSpeedTractionLossMult", default = 1.0, description = 'How much traction is reduced at low speed, 0.0 means normal traction. It affects mainly car burnout '},
-			{ type = "input", label = "fCamberStiffnesss", default = 1.0, description = 'How much the vehicle is pushed towards its roll direction. Road camber also affects roll and applied forces.'},
-			{ type = "input", label = "fTractionBiasFront", default = 1.0, description = 'Determines the distribution of traction from front to rear.'},
-			{ type = "input", label = "fTractionLossMult", default = 1.0, description = 'How much is traction affected by material grip differences from 1.0. Basically it affects how much grip is changed when driving on asphalt and mud'},
+			{ type = "input", label = "fLowSpeedTractionLossMult", default = 1.0, description = 'Quanta trazione viene ridotta a bassa velocità, 0,0 significa trazione normale. Influisce principalmente sul burnout dell\'auto '},
+			{ type = "input", label = "fCamberStiffnesss", default = 1.0, description = 'Quanto il veicolo viene spinto verso la sua direzione di rollio. Anche la campanatura della strada influisce sul rollio e sulle forze applicate.'},
+			{ type = "input", label = "fTractionBiasFront", default = 1.0, description = 'Determina la distribuzione della trazione dall\'anteriore al posteriore.'},
+			{ type = "input", label = "fTractionLossMult", default = 1.0, description = 'Quanto è influenzata la trazione dalle differenze di aderenza del materiale da 1.0. Fondamentalmente influisce su quanto l\'aderenza cambia quando si guida su asfalto e fango'},
 		}
 	},
 	[4] = { 
 		label = 'Suspension Attributes',
 		type = 'suspension',
 		icon = 'car',
-		description = 'Adjust Your vehicle suspension setting',
+		description = 'Regola l\'impostazione delle sospensioni del tuo veicolo',
 		handlingname = 'CHandlingData',
 		attributes = {
-			{ type = "input", label = "fSuspensionForce",  default = 1.0, description = ' Affects how strong suspension is. Can help if car is easily flipped over when turning.'},
+			{ type = "input", label = "fSuspensionForce",  default = 1.0, description = ' Influisce sulla robustezza delle sospensioni. Può aiutare se l\'auto si ribalta facilmente quando si svolta.'},
 			{ type = "input", label = "fSuspensionCompDamp", default = 1.0, description = 'Damping during strut compression. Bigger = stiffer.'},
 			{ type = "input", label = "fSuspensionReboundDamp", default = 1.0, description = 'Damping during strut rebound. Bigger = stiffer'},
-			{ type = "input", label = "fSuspensionUpperLimit", default = 1.0, description = 'Visual limit... how far can wheels move up / down from original position'},
-			{ type = "input", label = "fSuspensionLowerLimit", default = 1.0, description = 'Visual limit... how far can wheels move up / down from original position'},
-			{ type = "input", label = "fSuspensionRaise", default = 1.0, description = 'The amount that the suspension raises the body off the wheels.'},
+			{ type = "input", label = "fSuspensionUpperLimit", default = 1.0, description = 'Limite visivo... quanto lontano le ruote possono muoversi verso l\'alto/verso il basso rispetto alla posizione originale?'},
+			{ type = "input", label = "fSuspensionLowerLimit", default = 1.0, description = 'Limite visivo... quanto lontano le ruote possono muoversi verso l\'alto/verso il basso rispetto alla posizione originale?'},
+			{ type = "input", label = "fSuspensionRaise", default = 1.0, description = 'La misura in cui la sospensione solleva la carrozzeria dalle ruote.'},
 			{ type = "input", label = "fSuspensionBiasFront", default = 1.0, description = 'Force damping scale front/back.'},
 			{ type = "input", label = "fAntiRollBarForce", default = 1.0, description = 'The spring constant that is transmitted to the opposite wheel when under compression larger numbers are a larger force. Larger Numbers = less body roll'},
 			{ type = "input", label = "fAntiRollBarBiasFront", default = 1.0, description = 'The bias between front and rear for the antiroll bar(0 front, 1 rear)'},
@@ -653,7 +653,7 @@ config.developertune = {
 		label = 'Damage Attributes',
 		type = 'Damage',
 		icon = 'car',
-		description = 'The following attributes dictate how the vehicle will react to damaging effects.',
+		description = 'I seguenti attributi determinano il modo in cui il veicolo reagirà agli effetti dei danni.',
 		handlingname = 'CHandlingData',
 		attributes = {
 			{ type = "input", label = "fCollisionDamageMult",  default = 1.0, description = 'Multiplies the games calculation of damage to the vehicle through collision, causing gas tank and wheels to catch fire.'},
