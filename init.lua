@@ -47,7 +47,7 @@ elseif GetResourceState('qb-core') == 'started' then
 		end
 		HasRadialMenu()
 	end)
-	imagepath = 'nui://qb-inventory/html/images/'
+	imagepath = 'nui://ox_inventory/web/images/'
 else -- standalone ?
 	PlayerData = {job = 'mechanic', grade = 9}
 	if lib.addRadialItem then
